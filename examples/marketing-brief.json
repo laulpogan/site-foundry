@@ -1,0 +1,9 @@
+{
+  "brief": "Build a precise marketing launch site for an infrastructure workflow product for platform engineering teams. The primary action is booking a demo. Explain the product without invented customers, metrics, certifications, benchmarks, or capabilities.",
+  "site_type": "marketing",
+  "audience": ["platform engineering teams"],
+  "primary_goal": "book-demo",
+  "brand_attributes": ["precise", "confident", "technical"],
+  "content_density": "moderate",
+  "motion_level": "restrained"
+}

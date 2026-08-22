@@ -40,7 +40,7 @@ const spec: SiteSpec = {
   content_density: "moderate",
   motion_level: "restrained",
   stack: "react-typescript-tailwind",
-  assumptions: ["Product facts remain neutral editable copy"],
+  assumptions: ["Build a precise launch site for an infrastructure workflow product for engineering teams.", "Product facts remain neutral editable copy"],
   prohibited_claims: ["customer logos", "testimonials"],
 };
 
@@ -111,13 +111,16 @@ describe("site generator", () => {
       }],
     });
 
-    expect(result.files).toEqual(expect.arrayContaining(["DESIGN.md", "tokens.css", "src/App.tsx", "src/components/ui/button.tsx", "component-manifest.json", "provenance.json"]));
+    expect(result.files).toEqual(expect.arrayContaining(["DESIGN.md", "tokens.css", "src/App.tsx", "src/vite-env.d.ts", "src/components/ui/button.tsx", "component-manifest.json", "provenance.json"]));
     const app = await readFile(join(target, "src/App.tsx"), "utf8");
     expect(app).toContain('from "./components/ui/button"');
     expect(app).toContain("submit-contact-form");
     expect(app).toContain("/product");
     expect(app).not.toMatch(/lorem ipsum|Fortune 500|99\.99%/i);
+    expect(app).toContain("Infrastructure Workflow");
+    expect(app).not.toMatch(/Convert Visitors|Site Foundry proof build|>42</);
     expect(JSON.parse(await readFile(join(target, "component-manifest.json"), "utf8"))).toMatchObject({ reuse_ratio: 1 });
+    expect(JSON.parse(await readFile(join(target, "tsconfig.json"), "utf8")).compilerOptions).not.toHaveProperty("baseUrl");
   });
 
   it("refuses to generate without selected public source packages", async () => {

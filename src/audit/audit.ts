@@ -32,6 +32,7 @@ export interface PageAuditRequest {
 
 export interface AuditDriver {
   auditPage(request: PageAuditRequest): Promise<PageAuditEvidence>;
+  close?(): Promise<void>;
 }
 
 export interface AuditIssue {
@@ -56,8 +57,10 @@ async function restrictNetwork(context: BrowserContext): Promise<void> {
 }
 
 export class PlaywrightAuditDriver implements AuditDriver {
+  private readonly browser = chromium.launch({ headless: true });
+
   async auditPage(request: PageAuditRequest): Promise<PageAuditEvidence> {
-    const browser = await chromium.launch({ headless: true });
+    const browser = await this.browser;
     const context = await browser.newContext({ viewport: request.viewport, reducedMotion: "reduce" });
     const consoleErrors: string[] = [];
     const failedRequests: string[] = [];
@@ -95,8 +98,11 @@ export class PlaywrightAuditDriver implements AuditDriver {
       };
     } finally {
       await context.close();
-      await browser.close();
     }
+  }
+
+  async close(): Promise<void> {
+    await (await this.browser).close();
   }
 }
 
@@ -117,9 +123,10 @@ export async function auditSite(
     if (condition) issues.push({ code, severity, message, route, viewport });
   };
   let pagesAudited = 0;
-  for (const routeSpec of spec.routes) {
-    const route = concreteRoute(routeSpec.path);
-    for (const dimensions of DEFAULT_VIEWPORTS) {
+  try {
+    for (const routeSpec of spec.routes) {
+      const route = concreteRoute(routeSpec.path);
+      for (const dimensions of DEFAULT_VIEWPORTS) {
       const viewport = `${dimensions.width}x${dimensions.height}`;
       const evidence = await driver.auditPage({ url: new URL(route, baseUrl).href, route, viewport: dimensions, network_policy: "local-only" });
       pagesAudited += 1;
@@ -138,7 +145,10 @@ export async function auditSite(
       for (const claim of spec.prohibited_claims) {
         if (claim && evidence.text.toLowerCase().includes(claim.toLowerCase())) add(true, "prohibited-claim", "critical", `Unverified claim appears: ${claim}`, route, viewport);
       }
+      }
     }
+  } finally {
+    await driver.close?.();
   }
   issues.sort((a, b) => severityRank[b.severity] - severityRank[a.severity] || a.code.localeCompare(b.code) || a.route.localeCompare(b.route) || a.viewport.localeCompare(b.viewport));
   return { acceptance_gates_passed: issues.length === 0, issues, pages_audited: pagesAudited };

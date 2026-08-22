@@ -94,6 +94,22 @@
   rate_limit_ms: 1200
   quality_prior: 86
 
+- id: minimal-gallery
+  domain: minimal.gallery
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 88
+
+- id: awwwards
+  domain: awwwards.com
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 88
+
 - id: saasframe
   domain: saasframe.io
   mode: product-inspiration

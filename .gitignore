@@ -5,6 +5,7 @@ coverage/
 runtime/cache/
 runtime/runs/
 runtime/catalog.sqlite*
+runtime/sites/
 test-results/
 playwright-report/
 *.log
