@@ -1,0 +1,15 @@
+primary:
+  blind_human_preference_win_rate: 0.70
+  component_reuse_ratio: 0.90
+  imported_code_provenance_ratio: 1.00
+  auth_policy_violations: 0
+  unsafe_or_unknown_license_imports: 0
+secondary:
+  coherence_delta: positive
+  functional_failure_delta: non-increasing
+  accessibility_failure_delta: non-increasing
+  custom_component_delta: decreasing
+rules:
+  - Use the same model and implementation budget for both systems.
+  - Hide system identity in human preference comparisons.
+  - Human ratings are required before release-ready status.
