@@ -1,0 +1,19 @@
+id: service-event
+triggers: [service, event, local, booking, location, schedule, practice, dental]
+routes:
+  - { path: /, purpose: introduce the offering }
+  - { path: /services, purpose: explain services }
+  - { path: /schedule, purpose: present availability }
+  - { path: /booking, purpose: present a booking shell }
+  - { path: /location, purpose: explain the location }
+  - { path: /faq, purpose: answer common questions }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: hero, classification: signature }
+  - { id: service-list, classification: structural }
+  - { id: schedule, classification: functional }
+  - { id: booking-shell, classification: functional }
+  - { id: location-panel, classification: structural }
+  - { id: footer, classification: structural }
+interactions: [select-service, select-time, request-booking]
+required_states: [loading, empty, error, selected, destructive]

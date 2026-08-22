@@ -1,0 +1,19 @@
+id: ecommerce
+triggers: [store, shop, ecommerce, product, cart, checkout]
+routes:
+  - { path: /, purpose: merchandise products }
+  - { path: /collections, purpose: browse a collection }
+  - { path: /products/:id, purpose: inspect a product }
+  - { path: /cart, purpose: review selected products }
+  - { path: /checkout, purpose: present a checkout shell }
+  - { path: /account, purpose: manage customer account }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: hero, classification: signature }
+  - { id: product-grid, classification: functional }
+  - { id: product-gallery, classification: signature }
+  - { id: cart-drawer, classification: functional }
+  - { id: checkout-shell, classification: functional }
+  - { id: footer, classification: structural }
+interactions: [filter-products, add-to-cart, update-cart, begin-checkout]
+required_states: [loading, empty, error, selected, destructive]

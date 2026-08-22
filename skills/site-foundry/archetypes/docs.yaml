@@ -1,0 +1,18 @@
+id: docs
+triggers: [documentation, docs, api, developer, changelog]
+routes:
+  - { path: /, purpose: explain the developer product }
+  - { path: /docs, purpose: navigate documentation }
+  - { path: /docs/:slug, purpose: read a guide }
+  - { path: /api, purpose: browse API reference }
+  - { path: /examples, purpose: inspect examples }
+  - { path: /changelog, purpose: review changes }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: docs-shell, classification: signature }
+  - { id: docs-sidebar, classification: structural }
+  - { id: code-example, classification: functional }
+  - { id: api-table, classification: functional }
+  - { id: search, classification: functional }
+interactions: [search-docs, copy-code, select-api-operation]
+required_states: [loading, empty, error, selected, destructive]

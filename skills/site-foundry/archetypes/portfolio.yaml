@@ -1,0 +1,18 @@
+id: portfolio
+triggers: [portfolio, agency, studio, case study, work]
+routes:
+  - { path: /, purpose: introduce the practice }
+  - { path: /work, purpose: list selected work }
+  - { path: /work/:id, purpose: explain a case study }
+  - { path: /services, purpose: explain services }
+  - { path: /about, purpose: introduce the team }
+  - { path: /contact, purpose: start an inquiry }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: hero, classification: signature }
+  - { id: work-index, classification: signature }
+  - { id: case-study-story, classification: structural }
+  - { id: inquiry-form, classification: functional }
+  - { id: footer, classification: structural }
+interactions: [filter-work, open-case-study, submit-inquiry]
+required_states: [loading, empty, error, selected, destructive]

@@ -1,0 +1,17 @@
+id: editorial
+triggers: [publication, editorial, magazine, article, newsletter]
+routes:
+  - { path: /, purpose: feature current stories }
+  - { path: /category/:id, purpose: browse a topic }
+  - { path: /articles/:id, purpose: read an article }
+  - { path: /authors/:id, purpose: show an author archive }
+  - { path: /search, purpose: search published work }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: lead-story, classification: signature }
+  - { id: article-grid, classification: structural }
+  - { id: article-body, classification: signature }
+  - { id: newsletter-form, classification: functional }
+  - { id: footer, classification: structural }
+interactions: [search-articles, filter-category, subscribe-newsletter]
+required_states: [loading, empty, error, selected, destructive]

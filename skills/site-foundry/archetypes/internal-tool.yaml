@@ -1,0 +1,19 @@
+id: internal-tool
+triggers: [internal tool, admin, records, permissions, audit history, workflow]
+routes:
+  - { path: /app, purpose: show operational overview }
+  - { path: /app/records, purpose: list records }
+  - { path: /app/records/:id, purpose: inspect a record }
+  - { path: /app/workflows, purpose: manage workflows }
+  - { path: /app/permissions, purpose: manage access }
+  - { path: /app/audit, purpose: inspect audit history }
+slots:
+  - { id: app-shell, classification: signature }
+  - { id: main-navigation, classification: structural }
+  - { id: records-table, classification: functional }
+  - { id: detail-panel, classification: functional }
+  - { id: workflow-builder, classification: functional }
+  - { id: permissions-grid, classification: functional }
+  - { id: audit-stream, classification: structural }
+interactions: [filter-records, update-record, run-workflow, change-permission]
+required_states: [loading, empty, error, selected, destructive]

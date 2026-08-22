@@ -1,0 +1,22 @@
+id: saas-product
+triggers: [saas, dashboard, app, settings, onboarding, billing, table]
+routes:
+  - { path: /app, purpose: show operational overview }
+  - { path: /app/records, purpose: list records }
+  - { path: /app/records/:id, purpose: inspect a record }
+  - { path: /app/new, purpose: create a record }
+  - { path: /app/settings, purpose: manage settings and billing }
+  - { path: /app/onboarding, purpose: guide initial setup }
+slots:
+  - { id: app-shell, classification: signature }
+  - { id: main-navigation, classification: structural }
+  - { id: sidebar, classification: structural }
+  - { id: command-menu, classification: functional }
+  - { id: metric-summary, classification: structural }
+  - { id: data-table, classification: functional }
+  - { id: detail-panel, classification: functional }
+  - { id: form, classification: functional }
+  - { id: dialog, classification: functional }
+  - { id: empty-state, classification: support }
+interactions: [open-command-menu, filter-records, create-record, update-settings, complete-onboarding]
+required_states: [loading, empty, error, selected, destructive]

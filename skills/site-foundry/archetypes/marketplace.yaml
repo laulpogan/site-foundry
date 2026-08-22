@@ -1,0 +1,18 @@
+id: marketplace
+triggers: [marketplace, community, listing, profile, moderation]
+routes:
+  - { path: /, purpose: discover listings }
+  - { path: /listings, purpose: browse all listings }
+  - { path: /listings/:id, purpose: inspect a listing }
+  - { path: /profiles/:id, purpose: inspect a member }
+  - { path: /submit, purpose: submit a listing }
+  - { path: /moderation, purpose: moderate submissions }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: discovery-hero, classification: signature }
+  - { id: listing-grid, classification: functional }
+  - { id: listing-detail, classification: structural }
+  - { id: submission-form, classification: functional }
+  - { id: moderation-table, classification: functional }
+interactions: [search-listings, filter-listings, submit-listing, moderate-listing]
+required_states: [loading, empty, error, selected, destructive]

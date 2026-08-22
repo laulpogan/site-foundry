@@ -1,0 +1,21 @@
+id: marketing
+triggers: [launch, marketing, pricing, product, company, demo]
+routes:
+  - { path: /, purpose: convert visitors }
+  - { path: /product, purpose: explain the product }
+  - { path: /pricing, purpose: present editable plans }
+  - { path: /about, purpose: explain the company }
+  - { path: /contact, purpose: capture qualified contact }
+  - { path: /blog, purpose: list articles }
+  - { path: /blog/article, purpose: render an article }
+slots:
+  - { id: main-navigation, classification: structural }
+  - { id: hero, classification: signature }
+  - { id: proof-strip, classification: structural }
+  - { id: product-demonstration, classification: signature }
+  - { id: feature-story, classification: structural }
+  - { id: pricing-preview, classification: functional }
+  - { id: final-cta, classification: structural }
+  - { id: footer, classification: structural }
+interactions: [open-mobile-navigation, submit-contact-form, select-pricing-plan]
+required_states: [loading, empty, error, selected, destructive]
