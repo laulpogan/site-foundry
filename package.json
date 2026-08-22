@@ -4,6 +4,20 @@
   "description": "Autonomous component-set compiler for coherent, license-safe websites",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laulpogan/site-foundry.git"
+  },
+  "files": [
+    "dist",
+    "skills/site-foundry",
+    "evaluation",
+    "examples",
+    "docs/evaluation.md",
+    "docs/superpowers/specs/2026-08-22-site-foundry-design.md",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=24"
   },
