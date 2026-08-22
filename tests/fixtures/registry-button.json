@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "title": "Button",
+  "description": "A public button primitive.",
+  "dependencies": ["@radix-ui/react-slot"],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/button.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/button.tsx",
+      "content": "export function Button() { return null }"
+    }
+  ]
+}

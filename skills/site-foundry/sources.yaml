@@ -1,0 +1,127 @@
+- id: shadcn
+  domain: ui.shadcn.com
+  mode: registry-index
+  account_policy: public-only
+  implementation_policy: allowed-with-license
+  rate_limit_ms: 500
+  quality_prior: 95
+
+- id: registry-directory
+  domain: registry.directory
+  mode: registry-index
+  account_policy: public-only
+  implementation_policy: allowed-with-license
+  rate_limit_ms: 750
+  quality_prior: 90
+
+- id: 21st
+  domain: 21st.dev
+  mode: discovery-gallery
+  account_policy: public-only
+  implementation_policy: resolve-canonical-public-source-or-skip
+  rate_limit_ms: 1200
+  quality_prior: 80
+
+- id: magic-ui
+  domain: magicui.design
+  mode: public-component-docs
+  account_policy: public-only
+  implementation_policy: allowed-with-license
+  rate_limit_ms: 750
+  quality_prior: 85
+
+- id: aceternity
+  domain: ui.aceternity.com
+  mode: public-component-docs
+  account_policy: public-only
+  implementation_policy: free-public-only-with-license
+  rate_limit_ms: 1000
+  quality_prior: 80
+
+- id: react-bits
+  domain: reactbits.dev
+  mode: public-component-docs
+  account_policy: public-only
+  implementation_policy: allowed-with-license
+  rate_limit_ms: 750
+  quality_prior: 82
+
+- id: motion-primitives
+  domain: motion-primitives.com
+  mode: public-component-docs
+  account_policy: public-only
+  implementation_policy: allowed-with-license
+  rate_limit_ms: 750
+  quality_prior: 82
+
+- id: landbook
+  domain: land-book.com
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 88
+
+- id: lapa-ninja
+  domain: lapa.ninja
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 84
+
+- id: one-page-love
+  domain: onepagelove.com
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 82
+
+- id: godly
+  domain: godly.website
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 88
+
+- id: siteinspire
+  domain: siteinspire.com
+  mode: inspiration-gallery
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 86
+
+- id: saasframe
+  domain: saasframe.io
+  mode: product-inspiration
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 86
+
+- id: refero
+  domain: refero.design
+  mode: product-inspiration
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 84
+
+- id: nicelydone
+  domain: nicelydone.club
+  mode: product-inspiration
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 84
+
+- id: page-flows
+  domain: pageflows.com
+  mode: product-inspiration
+  account_policy: public-only
+  implementation_policy: inspiration-only
+  rate_limit_ms: 1200
+  quality_prior: 82
