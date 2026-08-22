@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidate Fixture</title>
+    <style>
+      body { margin: 0; font-family: system-ui; }
+      main { min-height: 100vh; display: grid; place-items: center; }
+      button:focus-visible { outline: 3px solid #f60; }
+      @media (prefers-reduced-motion: no-preference) { button { transition: transform 180ms ease-out; } button:hover { transform: translateY(-2px); } }
+    </style>
+  </head>
+  <body>
+    <main><button data-foundry-hover data-foundry-open>Open candidate</button></main>
+  </body>
+</html>
