@@ -53,6 +53,7 @@ export interface Candidate {
   status: "discovered" | "resolved" | "rejected" | "rendered" | "accepted";
   foundation_family: string;
   accent_source?: string;
+  icon_family?: string;
   dependencies: string[];
   style: StyleVector;
   scores?: CandidateScores;

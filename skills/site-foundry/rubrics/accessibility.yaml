@@ -1,0 +1,8 @@
+name: accessibility
+gates:
+  serious_axe_violations: 0
+  critical_axe_violations: 0
+  keyboard_navigation: pass
+  visible_focus: pass
+  reduced_motion: pass
+  mobile_usable: pass

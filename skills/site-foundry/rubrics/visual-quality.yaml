@@ -1,0 +1,12 @@
+name: visual-quality
+minimum_total: 85
+minimum_criterion: 70
+criteria:
+  design_dna_fit: 25
+  craftsmanship: 20
+  hierarchy: 15
+  typography: 10
+  responsive_behavior: 10
+  motion_quality: 8
+  accessibility: 7
+  integration_cost: 5

@@ -1,0 +1,15 @@
+name: anti-slop
+penalties:
+  - random blue-purple gradients
+  - glass on every surface
+  - excessive bento grids
+  - nested cards
+  - multiple icon families
+  - low-contrast grey text
+  - fake dashboards
+  - indiscriminate centering
+  - oversized radii on every surface
+  - scroll hijacking
+  - novelty cursors
+  - animation on every section
+rule: one dominant visual idea per viewport

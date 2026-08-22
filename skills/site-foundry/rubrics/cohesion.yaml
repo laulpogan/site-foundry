@@ -1,0 +1,14 @@
+name: cohesion
+hard_constraints:
+  foundation_families: 1
+  accent_sources_max: 2
+  icon_families: 1
+  motion_runtimes: 1
+  grids: 1
+  radius_scales: 1
+  shadow_scales: 1
+preferences:
+  dominant_family_visible_share: [0.6, 0.8]
+  dependency_count: minimize
+  adaptation_cost: minimize
+  source_fragmentation: minimize
