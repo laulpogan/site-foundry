@@ -66,6 +66,17 @@ export class RunStore {
     return record;
   }
 
+  async readArtifact<T>(id: string, filename: string): Promise<T> {
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.json$/.test(filename)) {
+      throw new FoundryError("INVALID_ARTIFACT", `Invalid artifact name: ${filename}`);
+    }
+    return JSON.parse(await readFile(join(this.runPath(id), "artifacts", filename), "utf8")) as T;
+  }
+
+  async writeFailure(id: string, failure: unknown): Promise<void> {
+    await writeJsonAtomic(join(this.runPath(id), "failure.json"), failure);
+  }
+
   async transition(
     id: string,
     next: RunStateName,
