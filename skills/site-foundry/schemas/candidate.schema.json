@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "slot", "source_id", "source_url", "status", "foundation_family", "dependencies", "style"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "slot": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "pattern": "^https://" },
+    "canonical_repository": { "type": "string", "pattern": "^https://" },
+    "revision": { "type": "string", "minLength": 1 },
+    "license": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["discovered", "resolved", "rejected", "rendered", "accepted"] },
+    "foundation_family": { "type": "string", "minLength": 1 },
+    "accent_source": { "type": "string" },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "style": { "type": "object" },
+    "scores": { "type": "object" }
+  },
+  "additionalProperties": false
+}

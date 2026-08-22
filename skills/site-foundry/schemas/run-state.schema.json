@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["state", "revision"],
+  "properties": {
+    "state": { "enum": ["BRIEFED", "ARCHETYPE_SELECTED", "REFERENCES_SCOUTED", "DESIGN_DNA_LOCKED", "PAGE_SLOTS_PLANNED", "CANDIDATES_RENDERED", "COMPONENT_SET_SELECTED", "DESIGN_SYSTEM_COMPILED", "SITE_BUILT", "AUDITED", "REPAIRED", "SHIPPED"] },
+    "revision": { "type": "integer", "minimum": 1 },
+    "artifact": { "type": "string" },
+    "updated_at": { "type": "string" }
+  }
+}

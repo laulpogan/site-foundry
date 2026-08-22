@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["thesis", "layout", "typography", "color", "geometry", "media", "motion", "density", "anti_patterns"],
+  "properties": {
+    "thesis": { "type": "string", "minLength": 1 },
+    "layout": { "type": "object", "required": ["grid", "max_width", "section_rhythm"], "properties": { "grid": { "type": "string" }, "max_width": { "type": "number", "minimum": 320 }, "section_rhythm": { "type": "string" } }, "additionalProperties": false },
+    "typography": { "type": "object", "required": ["display_character", "body_character", "scale"], "properties": { "display_character": { "type": "string" }, "body_character": { "type": "string" }, "scale": { "type": "string" } }, "additionalProperties": false },
+    "color": { "type": "object", "required": ["base", "accent_count", "contrast"], "properties": { "base": { "type": "string" }, "accent_count": { "type": "integer", "minimum": 0, "maximum": 2 }, "contrast": { "type": "string" } }, "additionalProperties": false },
+    "geometry": { "type": "object", "required": ["radius", "borders", "shadows"], "properties": { "radius": { "type": "string" }, "borders": { "type": "string" }, "shadows": { "type": "string" } }, "additionalProperties": false },
+    "media": { "type": "object", "required": ["treatment"], "properties": { "treatment": { "type": "string" } }, "additionalProperties": false },
+    "motion": { "type": "object", "required": ["energy", "durations", "signature_effects_per_page"], "properties": { "energy": { "type": "string" }, "durations": { "type": "string" }, "signature_effects_per_page": { "type": "integer", "minimum": 0, "maximum": 1 } }, "additionalProperties": false },
+    "density": { "type": "string" },
+    "anti_patterns": { "type": "array", "items": { "type": "string" } }
+  }
+}

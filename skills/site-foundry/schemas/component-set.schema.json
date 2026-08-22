@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["foundation", "accents", "icon_family", "motion_runtime", "selections"],
+  "properties": {
+    "foundation": { "type": "string", "minLength": 1 },
+    "accents": { "type": "array", "maxItems": 2, "uniqueItems": true, "items": { "type": "string" } },
+    "icon_family": { "type": "string", "minLength": 1 },
+    "motion_runtime": { "type": "string", "minLength": 1 },
+    "selections": { "type": "array", "items": { "type": "object", "required": ["slot", "candidate_id"], "properties": { "slot": { "type": "string" }, "candidate_id": { "type": "string" } }, "additionalProperties": false } }
+  }
+}

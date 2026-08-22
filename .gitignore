@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+runtime/cache/
+runtime/runs/
+runtime/catalog.sqlite*
+test-results/
+playwright-report/
+*.log

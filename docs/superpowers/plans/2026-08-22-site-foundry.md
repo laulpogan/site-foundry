@@ -6,7 +6,7 @@
 
 **Architecture:** A TypeScript monorepo-style package exposes one `site-foundry` CLI over focused modules for state, sources, security, design selection, generation, browser audit, proof packaging, and evaluation. SQLite retains reusable catalog evidence while every run writes auditable JSON artifacts and resumes through a guarded state machine.
 
-**Tech Stack:** Node.js 24+, TypeScript 7, Vitest 4, Ajv 8, Playwright 1.62, axe-core, YAML, Commander, React 19, Tailwind CSS 4, Vite 7, SQLite.
+**Tech Stack:** Node.js 24+, TypeScript 7, Vitest 4, Ajv 8, Playwright 1.62, axe-core, YAML, Commander, React 19, Tailwind CSS 4, Vite 8, SQLite.
 
 **Spec:** `docs/superpowers/specs/2026-08-22-site-foundry-design.md`
 
@@ -157,4 +157,3 @@
 - [ ] Run the full test, typecheck, build, skill validation, and secret/artifact scans.
 - [ ] Write usage and architecture documentation from observed commands and evidence.
 - [ ] Commit the final verified unit, create `laulpogan/site-foundry`, push the branch, and report repository and branch URLs.
-

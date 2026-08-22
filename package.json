@@ -1,0 +1,40 @@
+{
+  "name": "site-foundry",
+  "version": "0.1.0",
+  "description": "Autonomous component-set compiler for coherent, license-safe websites",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "site-foundry": "dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "start": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "ajv": "8.20.0",
+    "better-sqlite3": "13.0.3",
+    "commander": "15.0.0",
+    "playwright": "1.62.1",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "26.2.0",
+    "@vitest/coverage-v8": "4.1.11",
+    "tsx": "4.23.12",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11"
+  }
+}
